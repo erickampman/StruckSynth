@@ -40,6 +40,6 @@
       in octaves, fundamental kept by default, amplitude 1/sqrt(ratio), seeded and the same on every platform),
       fed to the plugin's own ModalBank. Sweeps of sigma, mean, count and seed at C2/C4/C6, measured; decisions and
       findings in `tools/cloudlab/README.md`. No plugin, parameter or UI change.
-- [ ] Listen to the renders (`tools/cloudlab/renders/`, after `python3 -I tools/cloudlab/experiments.py`)
-- [ ] If kept: a Cloud series in ModalGenerators.hpp (mean, sigma, seed; trim the 6–8 dB hotter attack), then
-      copied to StruckKit, StruckRoom and PolygraphModularUnified
+- [x] Listened to (2026-10-25): kept, as its own instrument rather than a series here. StruckGaussian, cloned from
+      this repo, is the cloud as a plugin; it carries `tools/cloudlab` on, with the generator in its
+      `src/Module/ModalCloud.hpp`
