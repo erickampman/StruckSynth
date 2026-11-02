@@ -27,25 +27,25 @@
 - [x] clap-wrapper AUv2 GUI patch carried in `patches/` (calls `gui->show()`, which starts the render timer)
 - [x] Validated on macOS (Xcode 26.3, Ninja, 2026-10-21): ctest 12/12; clap-validator 35 pass, 0 fail;
       auval passes; Steinberg's VST3 validator 47 pass, 0 fail (lists Tuning + Brightness)
-- [ ] By hand: GUI, notes, automation and state recall in Logic (AUv2), REAPER (VST3 + AUv2), Bitwig (VST3);
+- [ ] By hand: GUI, notes, automation and state recall in Logic (AUv2), REAPER (VST3 + AUv2), Bitwig (VST3) (Logic done 2026-11-01);
       Bitwig per-note Tuning in the VST3
 - [ ] Linux: VST3 build in CI; not yet loaded in a Linux host
 
 ## Save and Load (2026-10-27)
 - [x] Save / Load in the header write the patch as the factory presets' JSON and read it back (src/UI/PresetFile.hpp),
       through DPF's file dialog; MPE left out, loaded values clamped to each param's range.
-      Ported from StruckGaussian (ReleaseUMP R2-15).
+      Ported from StruckGaussian.
       ss-presetfile checks the round trip, every factory preset, and non-presets
 - [x] AUv2: clap-wrapper gives no timers and (unpatched) never calls gui show(), so the UI's idle never ran and DPF would never
       collect the dialog's result. The GUI now runs its own main-run-loop timer when the host has none, started at
       set_parent; the home folder comes from the account, not the sandboxed $HOME; failures show in the Preset menu
       (StruckGaussian 3f0c97c)
 - [x] By hand on Linux (2026-11-01): Save and Load (DPF's own dialog)
-- [ ] By hand: Save and Load in Logic Pro (AUv2) and a CLAP host on macOS
+- [x] By hand on the Mac (2026-11-01): Save and Load in Logic Pro (AUv2) and StageHand (CLAP)
 
 ## M4: Later
 - [x] Pitch 7.25 as persistent per-key tuning table (CLAP tuning stays per-note)
-- [ ] Move onto the DPF fork (erickampman/DPF) with own DGL_NAMESPACE
+- [x] Move onto the DPF fork (erickampman/DPF) with own DGL_NAMESPACE (2026-10-23)
 
 ## Experiment: mode cloud (2026-10-25)
 - [x] `tools/cloudlab`: offline renderer, the object's modes drawn from a Gaussian (log2 ratio ~ Normal(mean, sigma)

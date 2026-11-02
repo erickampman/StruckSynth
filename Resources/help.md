@@ -6,7 +6,7 @@
 </div>
 
 <p>
-  <em>StruckSynth is a CLAP and VST3 instrument on macOS and Linux, and an AUv2 instrument on macOS. Fine adjustment uses the Control key on both: on the Mac that is Control, not Cmd.</em>
+  <em>StruckSynth is a CLAP and VST® 3 instrument on macOS and Linux, and an AUv2 instrument on macOS. Fine adjustment uses the Control key on both: on the Mac that is Control, not Cmd.</em>
 </p>
 
 ::: {.callout .callout-note .card}
@@ -304,3 +304,5 @@ The **Preset** menu at the top right holds the factory presets, in alphabetical 
 - **Distortion.** Lower **Level**. Many loud notes ringing together add up.
 - **A rebuilt StruckSynth doesn't show its changes.** Quit and restart the host: a running host keeps the plugin it loaded first.
 :::
+
+VST is a registered trademark of Steinberg Media Technologies GmbH.

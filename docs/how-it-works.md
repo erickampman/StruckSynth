@@ -138,7 +138,7 @@ An expression may name only a note id: tuning then looks up that note's key.
 down to silence, is stolen, or (mono) the note leaves the held stack. Hosts such as Bitwig keep a
 note's per-voice modulation and expressions running until then. Notes that arrive as MIDI events get
 no note end, since a CLAP note end answers a CLAP note-on. The voice-info extension reports the voice
-count (10, or 1 in Mono) and that notes may overlap on the same key, since note ids keep them apart. In the VST3 build,
+count (10, or 1 in Mono) and that notes may overlap on the same key, since note ids keep them apart. In the VST® 3 build,
 clap-wrapper turns VST3 note expressions into CLAP ones, and offers hosts Tuning and Brightness as
 well as Pressure.
 
@@ -147,3 +147,5 @@ layer** (UIExporter + NanoVG + pugl). The CLAP entry point is hand-written in `s
 because DPF's generated CLAP wrapper drops `CLAP_EVENT_MIDI2` and advertises only the MIDI/MPE note
 dialects, which would make MIDI 2.0 7.9-pitch notes unreachable. This is the same raw-CLAP shape
 PlainOldSynth uses.
+
+VST is a registered trademark of Steinberg Media Technologies GmbH.
