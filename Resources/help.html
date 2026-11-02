@@ -284,7 +284,7 @@ tbody tr:nth-child(even) {
 </div>
 
 <p>
-  <em>StruckSynth is a CLAP instrument for macOS and Linux. Fine adjustment uses the Control key on both: on the Mac that is Control, not Cmd.</em>
+  <em>StruckSynth is a CLAP and VST3 instrument on macOS and Linux, and an AUv2 instrument on macOS. Fine adjustment uses the Control key on both: on the Mac that is Control, not Cmd.</em>
 </p>
 
 <section id="on-this-page" class="callout callout-note card">
@@ -328,7 +328,7 @@ your control of it.</p>
 <h2>Getting Started</h2>
 <ol type="1">
 <li><strong>Load StruckSynth</strong> on an instrument track in your
-host (REAPER, Bitwig, StageHand, or any CLAP host).</li>
+host (REAPER, Bitwig, StageHand, or any CLAP, VST3 or AU host).</li>
 <li><strong>Play.</strong> The default patch (the same as the
 <strong>Init</strong> preset) is a free-free metal bar with a 2-second
 decay.</li>
@@ -347,9 +347,11 @@ the Strike panel: lower is harder and brighter.</li>
 <section id="panel" class="callout callout-note card">
 <h2>The Panel</h2>
 <p><strong>The header:</strong> the Unlikelyware logo (a click opens
-unlikelyware.com), the title, <strong>Save</strong> and
-<strong>Load</strong> (see <a href="#presets">Presets</a>),
-<strong>Help</strong>, and the <strong>Preset</strong> menu.</p>
+unlikelyware.com), the title with <em>modal synthesis</em> beside it,
+<strong>Save</strong> and <strong>Load</strong> (see <a
+href="#presets">Presets</a>), <strong>Help</strong> (a
+<strong>?</strong> box that opens this page in your browser), and the
+<strong>Preset</strong> menu.</p>
 <p><strong>Below it, three rows:</strong></p>
 <ul>
 <li><strong>Top:</strong> the <a href="#spectrum">spectrum</a>, and the
@@ -397,7 +399,8 @@ range.</td>
 </tr>
 <tr>
 <td>Click a menu</td>
-<td>Opens its list; click a choice, or click elsewhere to close it</td>
+<td>Opens its list; click a choice, or click elsewhere (or press Escape)
+to close it</td>
 </tr>
 </tbody>
 </table>
@@ -672,9 +675,10 @@ their effect as a hump or a dip in the bar heights.</p>
 <li><strong>Voices</strong> (Mono / Poly 10 / Poly 20 / Poly 32, default
 Poly 10): how many notes can sound at once. See <a
 href="#voices-midi">Voices and MIDI</a>.</li>
-<li><strong>Glide</strong> (0.1 ms to 2 s, default 10 ms): the time to
-slide from one note's pitch to the next. <strong>Only in Mono</strong>;
-in the Poly modes each note starts on its own pitch.</li>
+<li><strong>Glide</strong> (0.1 ms to 2 s, default 10 ms; the knob reads
+0 ms at the bottom): the time to slide from one note's pitch to the
+next. <strong>Only in Mono</strong>; in the Poly modes each note starts
+on its own pitch.</li>
 <li><strong>Level</strong> (0–2, default 0.50): the output level, as a
 gain.</li>
 <li><strong>Spread</strong> (0–1, default 0.30): spreads the modes
@@ -912,15 +916,18 @@ doesn't change the name shown.</li>
 </ul>
 <p><strong>Your own patches:</strong> <strong>Save</strong> and
 <strong>Load</strong>, left of Help, write the patch to a file and read
-one back, through the system's file dialog. The first time, the dialog
-opens on <strong>Documents/StruckSynth</strong>; after that, on the last
-folder you used.</p>
+one back, through the system's file dialog. Save offers the name of the
+preset or patch last chosen, else <em>Untitled</em>. The first time, the
+dialog opens on <strong>Documents/StruckSynth</strong>; after that, on
+the last folder you used.</p>
 <ul>
 <li>A saved patch has every sound parameter, like a factory preset, and
 leaves out <strong>MPE</strong>. Loading one sets those parameters and
 leaves MPE alone.</li>
 <li>The menu then shows the patch's name, dimmed, in place of a factory
-preset's.</li>
+preset's. If a file can't be written or isn't a StruckSynth patch, the
+menu says <strong>Couldn't save</strong> or <strong>Couldn't
+load</strong> instead.</li>
 <li>The file is the same JSON as the factory presets, so a patch you
 save can be put in the source's <code>Presets</code> folder to build it
 in as a factory preset.</li>
