@@ -35,6 +35,13 @@ StruckSynth has three siblings built on it: [StruckRoom](https://github.com/eric
 (the object inside a room), [StruckGaussian](https://github.com/erickampman/StruckGaussian) (modes as
 a random cloud) and [StruckKit](https://github.com/erickampman/StruckKit) (a drum kit).
 
+## Known gaps
+
+- MPE's upper zone isn't supported, and Pitch 7.25 lasts for the sounding note only (no tuning
+  table).
+- Factory presets are chosen in the editor; CLAP's preset discovery, which lets a host's browser
+  list them, isn't implemented.
+
 ## Installing
 
 The download holds `StruckSynth.clap`. Put it in your CLAP folder (create the folder if it isn't there),
