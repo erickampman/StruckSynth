@@ -136,6 +136,12 @@ set_target_properties(strucksynth_core PROPERTIES
     VISIBILITY_INLINES_HIDDEN ON
     CXX_STANDARD 20
     CXX_STANDARD_REQUIRED ON)
+# uw-core (git submodule), for one header: uw/base/HelpServer.h, which serves the
+# help page over loopback on Linux (a snap browser can't read /tmp). Nothing to link.
+# STRUCKSYNTH_UW_CORE_DIR points at another uw-core clone (e.g. ../uw-core).
+set(STRUCKSYNTH_UW_CORE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/external/uw-core" CACHE PATH "uw-core source")
+target_include_directories(strucksynth_core PRIVATE "${STRUCKSYNTH_UW_CORE_DIR}/src")
+
 target_include_directories(strucksynth_core PUBLIC
     src                               # plugin_gui.h (the DSP <-> GUI seam)
     plugin                            # DistrhoPluginInfo.h + StruckSynthParams.h
